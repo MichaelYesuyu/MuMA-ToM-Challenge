@@ -1,3 +1,95 @@
-<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MuMA-ToM Challenge Overview</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.55; color: #111827; }
+    .container { max-width: 920px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 28px; margin-bottom: 12px; }
+    h2 { font-size: 20px; margin-top: 26px; margin-bottom: 10px; }
+    p { margin: 10px 0; }
+    ul { margin: 8px 0 12px 22px; }
+    li { margin: 6px 0; }
+    .callout {
+      background: #f3f4f6;
+      border-left: 4px solid #6b7280;
+      padding: 12px 14px;
+      margin: 14px 0;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
 
-<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+    <h1>MuMA-ToM: Multi-modal Multi-Agent Theory of Mind Challenge</h1>
+
+    <p>
+      We introduce MuMA-ToM, a multi-modal multi-agent Theory of Mind benchmark designed to evaluate mental reasoning in embodied social interactions. 
+      Understanding social interactions requires inferring the mental states that give rise to observable behavior, including agents’ beliefs, social goals, 
+      and beliefs about other agents’ goals. This benchmark evaluates whether AI systems can infer these mental states from multi-modal information.
+    </p>
+
+    <p>
+      In this challenge, each trial consists of video and text describing people’s behavior in realistic household environments. The video and text jointly 
+      depict multi-agent interactions, and the text may include conversations between agents or descriptions of events not shown in the video. Based on 
+      this multi-modal context, participants must answer questions about the agents’ mental states.
+    </p>
+
+    <h2>Question types</h2>
+
+    <p>
+      The benchmark evaluates three core aspects of Theory of Mind reasoning in multi-agent interactions:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Belief inference:</strong> inferring an agent’s belief about the physical state based on their actions, utterances, and social goal.
+      </li>
+      <li>
+        <strong>Social goal inference:</strong> inferring whether an agent is trying to help, hinder, or act independently with respect to another agent’s goal.
+      </li>
+      <li>
+        <strong>Belief of goal inference:</strong> inferring an agent’s belief about another agent’s goal based on the interaction context.
+      </li>
+    </ul>
+
+    <div class="callout">
+      Each question is designed so that the correct answer can be inferred from the multi-modal interaction, given explicit assumptions about other relevant mental variables.
+    </div>
+
+    <h2>Benchmark structure</h2>
+
+    <ul>
+      <li>225 multi-modal social interactions between two agents.</li>
+      <li>900 multiple-choice questions based on these interactions.</li>
+      <li>300 questions for each question category: belief inference, social goal inference, and belief of goal inference.</li>
+    </ul>
+
+    <p>
+      Each interaction takes place in a household environment and involves two agents interacting through physical actions and verbal communication. 
+      The benchmark is designed to require integration of visual and linguistic information in order to infer agents’ mental states.
+    </p>
+
+    <h2>Goal of the challenge</h2>
+
+    <p>
+      The goal of this challenge is to evaluate progress toward machine Theory of Mind in realistic multi-modal, multi-agent settings. 
+      Participants must develop models that can reason about agents’ beliefs, goals, and social intentions by integrating video and text information.
+    </p>
+
+    <p>
+      Submissions should provide one answer per question. Models will be evaluated based on accuracy in predicting the correct mental state inference.
+    </p>
+
+    <p style="font-size: 13px; color: #4b5563;">
+      MuMA-ToM Benchmark — Shi et al., Johns Hopkins University and University of Virginia.
+    </p>
+
+  </div>
+</body>
+</html>
