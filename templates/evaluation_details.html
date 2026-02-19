@@ -1,1 +1,111 @@
-<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MuMA-ToM Evaluation Details</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.55; color: #111827; }
+    .container { max-width: 920px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 24px; margin: 0 0 12px; }
+    h2 { font-size: 18px; margin: 22px 0 10px; }
+    p { margin: 10px 0; }
+    ul { margin: 8px 0 12px 22px; }
+    li { margin: 6px 0; }
+    .callout { background: #f3f4f6; border-left: 4px solid #6b7280; padding: 12px 14px; margin: 14px 0; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    table { border-collapse: collapse; width: 100%; margin: 10px 0 6px; }
+    th, td { border: 1px solid #e5e7eb; padding: 10px; vertical-align: top; }
+    th { background: #f9fafb; text-align: left; }
+    .small { font-size: 13px; color: #4b5563; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Evaluation Details</h1>
+
+    <p>
+      MuMA-ToM is a multi-modal multi-agent Theory of Mind benchmark designed to evaluate mental reasoning in embodied
+      multi-agent interactions. Each trial depicts a social interaction in video and text jointly, and each question asks
+      about agents’ mental states based on the multi-modal context.
+    </p>
+
+    <h2>What we evaluate</h2>
+    <p>
+      We evaluate performance on three types of Theory of Mind questions:
+    </p>
+    <ul>
+      <li><strong>Belief inference</strong></li>
+      <li><strong>Social goal inference</strong></li>
+      <li><strong>Belief of goal inference</strong></li>
+    </ul>
+
+    <h2>Primary metric</h2>
+    <p>
+      The primary metric is <strong>accuracy</strong> on multiple-choice questions.
+      For each question, a submission must select exactly one option from <span class="mono">A</span>,
+      <span class="mono">B</span>, or <span class="mono">C</span>. A prediction is correct if it matches the ground-truth option.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Reported metrics</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Overall Accuracy</strong></td>
+          <td>Accuracy computed over all questions in the evaluated split.</td>
+        </tr>
+        <tr>
+          <td><strong>Belief Accuracy</strong></td>
+          <td>Accuracy computed over belief inference questions only.</td>
+        </tr>
+        <tr>
+          <td><strong>Social Goal Accuracy</strong></td>
+          <td>Accuracy computed over social goal inference questions only.</td>
+        </tr>
+        <tr>
+          <td><strong>Belief-of-Goal Accuracy</strong></td>
+          <td>Accuracy computed over belief of goal inference questions only.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <p>
+        Questions are designed so that the correct answer can be inferred from the multi-modal interaction, conditioned on
+        explicitly provided assumptions about other relevant mental variables. This is intended to address ambiguity arising
+        from multiple plausible combinations of beliefs and goals in multi-agent interactions.
+      </p>
+    </div>
+
+    <h2>Benchmark composition</h2>
+    <ul>
+      <li>225 multi-modal social interactions between two agents.</li>
+      <li>900 multiple-choice questions based on these interactions.</li>
+      <li>Three question categories with 300 questions each.</li>
+    </ul>
+
+    <h2>Human baseline (reference)</h2>
+    <p>
+      In the accompanying human experiment, participants achieved near-perfect performance, with majority agreement on
+      almost all questions, and an overall performance averaged across individual participants reported in the paper.
+      We include this as a reference point for interpreting model performance on the benchmark.
+    </p>
+
+    <h2>Submission evaluation</h2>
+    <p>
+      We evaluate each submission by comparing its predicted option for each question ID against the ground-truth answer,
+      then computing accuracy overall and by question type. The leaderboard is ranked by <strong>Overall Accuracy</strong>
+      by default, and we report the category breakdowns for analysis.
+    </p>
+
+    <p class="small">
+      Please follow the phase-specific submission guidelines for the exact submission file format expected by the EvalAI evaluation script.
+    </p>
+  </div>
+</body>
+</html>
